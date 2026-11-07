@@ -1,0 +1,18 @@
+{
+  "name": "kenmotion",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "typecheck": "bun run --cwd apps/web vue-tsc --noEmit && bun run --cwd apps/server tsc --noEmit",
+    "dev:web": "bun --filter web dev",
+    "dev:server": "bun --filter server dev",
+    "dev": "concurrently --kill-others --names \"server,web\" --prefix-colors \"cyan,magenta\" \"bun run dev:server\" \"bun run dev:web\"",
+    "build": "bun run --cwd apps/web build",
+    "start": "bun run --cwd apps/server start"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

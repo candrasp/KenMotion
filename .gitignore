@@ -4,15 +4,24 @@ node_modules/
 .pnp
 .pnp.js
 
-# Python
-Python/
-
 # Build outputs
 dist/
+**/dist/
 build/
+**/build/
 out/
+**/out/
 .output/
 *.local
+
+# Projects (User project workspaces & media)
+projects/
+*.mp4
+*.mov
+*.avi
+
+# Local Chat Sessions & Agent Memory
+**/.chat.json
 
 # Logs
 logs/
@@ -22,6 +31,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# Playwright & Browser artifacts
+test-results/
+playwright-report/
+.playwright/
 
 # Caches
 .cache/
@@ -45,16 +59,17 @@ lerna-debug.log*
 Thumbs.db
 desktop.ini
 
-# IDE
+# IDE & Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+.gemini/
+.antigravity/
 
 # Bun
 .bun/
-bun.lockb
 
 # Test coverage
 coverage/
